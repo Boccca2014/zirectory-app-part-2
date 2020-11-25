@@ -16,3 +16,14 @@
   padding: 0;
   list-style-type: none;
 }
+
+.add-meeting {
+  display: block;
+  width: 73px;
+  background: white;
+  background-image: url("./icons/add.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+  font-size: 0;
+}

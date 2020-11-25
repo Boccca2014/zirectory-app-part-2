@@ -34,6 +34,7 @@ class ListMeetings extends Component {
       <div className="list-meetings">
         <div className="list-meetings-top">
           <Search query={this.state.query} updateQuery={this.updateQuery} />
+          <a href="/create" className="add-meeting">Add Meeting</a>
         </div>
         <ol className="meeting-list">
           {meetings.map((meeting, index) => (
