@@ -10,6 +10,12 @@ class CreateMeeting extends Component {
       time: "",
       link: "",
     };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+    console.log(this.state);
   }
 
   render() {
@@ -20,10 +26,34 @@ class CreateMeeting extends Component {
         </a>
         <form className="create-meeting-form">
           <div className="create-meeting-details">
-            <input type="text" name="course" placeholder="Course" />
-            <input type="text" name="instructor" placeholder="Instructor" />
-            <input type="text" name="time" placeholder="Meeting Times" />
-            <input type="url" name="link" placeholder="Meeting Link" />
+            <input
+              type="text"
+              name="course"
+              placeholder="Course"
+              value={this.state.course}
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="instructor"
+              placeholder="Instructor"
+              value={this.state.instructor}
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="time"
+              placeholder="Meeting Times"
+              value={this.state.time}
+              onChange={this.handleChange}
+            />
+            <input
+              type="url"
+              name="link"
+              placeholder="Meeting Link"
+              value={this.state.link}
+              onChange={this.handleChange}
+            />
             <button>Add Meeting</button>
           </div>
         </form>
