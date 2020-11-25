@@ -2,6 +2,7 @@ import "./ListMeetings.css";
 import Search from "./Search.js";
 import Meeting from "./Meeting.js";
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import escapeRegExp from "escape-string-regexp";
 import sortBy from "sort-by";
 
@@ -34,7 +35,7 @@ class ListMeetings extends Component {
       <div className="list-meetings">
         <div className="list-meetings-top">
           <Search query={this.state.query} updateQuery={this.updateQuery} />
-          <a href="/create" className="add-meeting">Add Meeting</a>
+          <Link to="/create" className="add-meeting" />
         </div>
         <ol className="meeting-list">
           {meetings.map((meeting, index) => (

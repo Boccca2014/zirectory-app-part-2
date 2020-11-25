@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 import "./CreateMeeting.css";
 
 class CreateMeeting extends Component {
@@ -28,9 +29,7 @@ class CreateMeeting extends Component {
   render() {
     return (
       <div>
-        <a href="/" className="close-create-meeting">
-          Close
-        </a>
+        <Link to="/" className="close-create-meeting" />
         <form className="create-meeting-form" onSubmit={this.handleSubmit}>
           <div className="create-meeting-details">
             <input
