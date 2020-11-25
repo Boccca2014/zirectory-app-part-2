@@ -1,0 +1,18 @@
+.list-meetings {
+  padding-top: 60px;
+}
+
+.list-meetings-top {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid #d5d8df;
+  display: flex;
+}
+
+.meeting-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
