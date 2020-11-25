@@ -1,5 +1,7 @@
 import { Component } from "react";
 import ListMeetings from "./ListMeetings.js";
+import { Route, Switch } from "react-router";
+import CreateMeeting from "./CreateMeeting.js";
 
 class App extends Component {
   state = {
@@ -45,10 +47,17 @@ class App extends Component {
 
   render() {
     return (
-      <ListMeetings
-        meetings={this.state.meetings}
-        onDeleteMeeting={this.removeMeeting}
-      />
+      <Switch>
+        <Route exact path="/">
+          <ListMeetings
+            meetings={this.state.meetings}
+            onDeleteMeeting={this.removeMeeting}
+          />
+        </Route>
+        <Route path="/create">
+          <CreateMeeting />
+        </Route>
+      </Switch>
     );
   }
 }
