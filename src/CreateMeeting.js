@@ -11,11 +11,16 @@ class CreateMeeting extends Component {
       link: "",
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
-    console.log(this.state);
+  }
+
+  handleSubmit(event) {
+    alert("A meeting was added: " + JSON.stringify(this.state));
+    event.preventDefault();
   }
 
   render() {
@@ -24,7 +29,7 @@ class CreateMeeting extends Component {
         <a href="/" className="close-create-meeting">
           Close
         </a>
-        <form className="create-meeting-form">
+        <form className="create-meeting-form" onSubmit={this.handleSubmit}>
           <div className="create-meeting-details">
             <input
               type="text"
