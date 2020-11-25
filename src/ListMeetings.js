@@ -5,6 +5,7 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import escapeRegExp from "escape-string-regexp";
 import sortBy from "sort-by";
+import PropTypes from "prop-types";
 
 class ListMeetings extends Component {
   state = {
@@ -52,3 +53,15 @@ class ListMeetings extends Component {
 }
 
 export default ListMeetings;
+
+ListMeetings.propTypes = {
+  meetings: PropTypes.arrayOf(
+    PropTypes.shape({
+      course: PropTypes.string.isRequired,
+      instructor: PropTypes.string.isRequired,
+      time: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  onDeleteMeeting: PropTypes.func.isRequired,
+};
