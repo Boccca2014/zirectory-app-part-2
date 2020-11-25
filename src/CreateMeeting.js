@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { withRouter } from "react-router";
 import "./CreateMeeting.css";
 
 class CreateMeeting extends Component {
@@ -19,8 +20,9 @@ class CreateMeeting extends Component {
   }
 
   handleSubmit(event) {
-    alert("A meeting was added: " + JSON.stringify(this.state));
+    this.props.onCreateMeeting(this.state);
     event.preventDefault();
+    this.props.history.push("/");
   }
 
   render() {
@@ -67,4 +69,4 @@ class CreateMeeting extends Component {
   }
 }
 
-export default CreateMeeting;
+export default withRouter(CreateMeeting);

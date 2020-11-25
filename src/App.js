@@ -45,6 +45,12 @@ class App extends Component {
     });
   };
 
+  addMeeting = (meeting) => {
+    this.setState({
+      meetings: this.state.meetings.concat(meeting),
+    });
+  };
+
   render() {
     return (
       <Switch>
@@ -55,7 +61,7 @@ class App extends Component {
           />
         </Route>
         <Route path="/create">
-          <CreateMeeting />
+          <CreateMeeting onCreateMeeting={this.addMeeting} />
         </Route>
       </Switch>
     );
