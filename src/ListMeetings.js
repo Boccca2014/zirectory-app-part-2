@@ -57,6 +57,7 @@ export default ListMeetings;
 ListMeetings.propTypes = {
   meetings: PropTypes.arrayOf(
     PropTypes.shape({
+      _id: PropTypes.string,
       course: PropTypes.string.isRequired,
       instructor: PropTypes.string.isRequired,
       time: PropTypes.string.isRequired,

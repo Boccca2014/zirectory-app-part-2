@@ -1,4 +1,5 @@
 import "./Search.css";
+import PropTypes from "prop-types";
 
 function Search(props) {
   const { query, updateQuery } = props;
@@ -14,3 +15,8 @@ function Search(props) {
 }
 
 export default Search;
+
+Search.propTypes = {
+  query: PropTypes.string,
+  updateQuery: PropTypes.func.isRequired,
+};
